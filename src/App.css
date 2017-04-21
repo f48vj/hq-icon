@@ -44,6 +44,7 @@ footer {
 .search {
   height: 40px;
   display: flex;
+  margin-bottom: 10px;
 }
 
 .search-input {

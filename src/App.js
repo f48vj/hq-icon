@@ -64,6 +64,7 @@ class App extends Component {
                 <img src={search} className='search-icon' alt='search' />
               </div>
             </div>
+            <a className="github-button" href="https://github.com/zhangweijie-cn/hq-icon" data-style="mega" aria-label="Star zhangweijie-cn/hq-icon on GitHub">Star</a>
           </div>
         </header>
         <main className='results'>
