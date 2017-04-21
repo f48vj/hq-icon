@@ -1,0 +1,81 @@
+.app {
+  text-align: center;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 412px;
+  background: #F95759;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  padding-bottom: 30px;
+}
+
+footer {
+  width: 100%;
+  height: 30px;
+}
+
+.center {
+  flex: 1;
+  max-width: 620px;
+}
+
+.logo {
+  color: white;
+  font-size: 60px;
+  font-family: "OriyaMN, Oriya MN";
+  font-weight: normal;
+  margin-top: 60px;
+}
+
+.description {
+  color: white;
+  font-size: 24px;
+  margin: 40px 0px;
+}
+
+.search {
+  height: 40px;
+  display: flex;
+}
+
+.search-input {
+  height: 40px;
+  flex: 1;
+  padding: 0px 0px 0px 10px;
+  border: 0px;
+  font-size: 18px; 
+}
+
+.search-button {
+  height: 40px;
+  width: 40px;
+  background: #F8E81C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0px;
+}
+
+.search-button:hover {
+  background: #BEB217;
+}
+
+.search-icon {
+  height: 32px;
+  width: 32px;
+  flex: 1;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
