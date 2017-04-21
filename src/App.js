@@ -20,7 +20,8 @@ class App extends Component {
   }
 
   async search () {
-    const { input } = this.state
+    let { input } = this.state
+    input = input.trim()
     let url = input
     const itunesReg = /^(http|https):\/\/itunes/
     const idReg = /\/id(\d+)/i
