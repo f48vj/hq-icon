@@ -14,13 +14,14 @@ class App extends Component {
     super(props)
     this.state = {
       input: '',
-      results: []
+      results: [],
+      country: 'US'
     }
     this.search = this.search.bind(this)
   }
 
   async search () {
-    let { input } = this.state
+    let { input, country } = this.state
     input = input.trim()
     let url = input
     const itunesReg = /^(http|https):\/\/itunes/
@@ -33,10 +34,10 @@ class App extends Component {
       }
       if (itunesReg.test(url) && idReg.test(url)) {
         const id = idReg.exec(url)[1]
-        const data = await searchAppById(id)
+        const data = await searchAppById(id, country)
         this.setState({ results: data.results })
       } else {
-        const data = await Promise.all([searchIosApp(input), searchMacApp(input)])
+        const data = await Promise.all([searchIosApp(input, country), searchMacApp(input, country)])
         this.setState({ results: data[0].results.concat(data[1].results) })
       }
     } catch (err) {
@@ -45,13 +46,19 @@ class App extends Component {
   }
 
   render () {
-    const { input, results } = this.state
+    const { input, results, country } = this.state
     return (
       <div className='app'>
         <header>
           <div className='center'>
             <div className='logo'>HQ ICON</div>
             <div className='description'>Get high quality icons from App Store</div>
+            <div className="country">
+                Country:
+                <lable onClick={() => this.setState({country: 'US'})}><input name="store" type="radio" checked={country === 'US'} />US 🇺🇸</lable>
+                <lable onClick={() => this.setState({country: 'CN'})}><input name="store" type="radio" checked={country === 'CN'} />CN 🇨🇳</lable>
+                <lable onClick={() => this.setState({country: 'JP'})}><input name="store" type="radio" checked={country === 'JP'} />JP 🇯🇵</lable>
+            </div>
             <div className='search'>
               <input
                 className='search-input'

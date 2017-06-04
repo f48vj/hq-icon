@@ -80,3 +80,11 @@ footer {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.country {
+  color: white;
+}
+
+.country lable {
+  margin: 0 10px;
+}
