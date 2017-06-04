@@ -1,0 +1,18 @@
+language: node_js
+
+node_js:
+- '7'
+
+before_install:
+- export TZ='Asia/Shanghai'
+
+script:
+- yarn run build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: build
+  on:
+    branch: master
