@@ -27,7 +27,7 @@ class Result extends Component {
     return (
       <div className='result'>
         <a href={base64} download={`${trackName}-${platform}.png`}>
-          <img className='icon' src={base64} alt='icon' />
+          <img className='icon' src={base64} alt={trackName} />
         </a>
         <div className='kind'>{platform}</div>
         {trackName}
