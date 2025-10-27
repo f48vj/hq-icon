@@ -1,9 +1,169 @@
-.result {
-    width: 256px;
-    margin: 20px;
+.result-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 24px;
+  box-shadow: 0 24px 45px rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(18px);
+  transition: transform 150ms ease, border-color 150ms ease;
+}
+
+.result-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.45);
+}
+
+.icon-wrapper {
+  position: relative;
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.8);
+  display: flex;
+  justify-content: center;
 }
 
 .icon {
-    height: 256px;
-    width: 256px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.55);
+  max-width: 220px;
+}
+
+.icon-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 220px;
+  border-radius: 20px;
+  background: rgba(148, 163, 184, 0.08);
+  color: rgba(148, 163, 184, 0.8);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.icon-skeleton {
+  width: 220px;
+  height: 220px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(148, 163, 184, 0.2), rgba(148, 163, 184, 0.05));
+  animation: shimmer 1.6s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    filter: brightness(0.9);
+  }
+  50% {
+    filter: brightness(1.15);
+  }
+  100% {
+    filter: brightness(0.9);
+  }
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.platform-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+}
+
+.platform-ios {
+  background: rgba(56, 189, 248, 0.14);
+  color: #bae6fd;
+}
+
+.platform-macos {
+  background: rgba(165, 180, 252, 0.16);
+  color: #e0e7ff;
+}
+
+.platform-visionos {
+  background: rgba(94, 234, 212, 0.12);
+  color: #ccfbf1;
+}
+
+.platform-watchos {
+  background: rgba(251, 191, 36, 0.12);
+  color: #fde68a;
+}
+
+.price {
+  font-size: 14px;
+  color: rgba(248, 250, 252, 0.85);
+}
+
+.result-card h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.seller {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(248, 250, 252, 0.6);
+}
+
+.meta-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+  color: rgba(248, 250, 252, 0.6);
+}
+
+.detail {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.12);
+}
+
+.detail.link {
+  text-decoration: none;
+  color: #bae6fd;
+  background: rgba(56, 189, 248, 0.12);
+  transition: background 150ms ease;
+}
+
+.detail.link:hover {
+  background: rgba(56, 189, 248, 0.2);
+}
+
+@media (max-width: 480px) {
+  .result-card {
+    padding: 20px;
+  }
+
+  .icon {
+    max-width: 180px;
+  }
+
+  .icon-skeleton {
+    width: 180px;
+    height: 180px;
+  }
 }
