@@ -1,6 +1,7 @@
 export default function drawOutline(data, resolution) {
     return new Promise((resolve, reject) => {
         const { artworkUrl512, kind } = data;
+        const normalizedKind = (kind || '').toLowerCase();
         const canvas = document.createElement('canvas');
         canvas.width = resolution;
         canvas.height = resolution;
@@ -15,7 +16,11 @@ export default function drawOutline(data, resolution) {
         appIcon.onload = function() {
             ctx.drawImage(appIcon, 0, 0);
             ctx.globalCompositeOperation = 'destination-in';
-            if (kind.startsWith('software')) {
+            if (
+                normalizedKind.startsWith('software') ||
+                normalizedKind.includes('vision') ||
+                normalizedKind.includes('watch')
+            ) {
                 const outline =
                     resolution === 512
                         ? new Path2D(
